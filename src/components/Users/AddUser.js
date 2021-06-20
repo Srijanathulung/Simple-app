@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from '../UI/Card';
+import classes from './AddUser.module.css';
+
 const AddUser = (props) => {
 
     const addUserHandler = (event) => {
@@ -7,7 +9,7 @@ const AddUser = (props) => {
         console.log('addUserHandler is working')
       };
     return (
-        <Card>
+        <Card classNameProp={classes.input}> 
         <form onSubmit={(event)=>addUserHandler(event)}>
             <label htmlFor='username'>Username</label>
             <input type='text' id='username'></input>
