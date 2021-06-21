@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Card from '../UI/Card';
 import classes from './AddUser.module.css';
 import Button from '../UI/Button';
@@ -21,10 +21,10 @@ const AddUser = (props) => {
     const addUserHandler = (event) => {
         event.preventDefault();
         // console.log('addUserHandler is working')
-        // console.log('enteredUserName =' + enteredUserName)
         // console.log(enteredUserName, enteredUserAge)
-        console.log('enteredUserName=' + enteredUserName + ' enteredUserAge='+enteredUserAge)
-
+        console.log('enteredUserName=' + enteredUserName + ' enteredUserAge=' + enteredUserAge)
+        setEnteredUserName('');
+        setEnteredUserAge('');
       };
     return (
         <Card classNameProp={classes.input}> 
@@ -34,6 +34,7 @@ const AddUser = (props) => {
                 <input
                     type='text'
                     id='username'
+                    value={enteredUserName}
                     onChange={(event) => userNameChangeHandler(event)}
                 />
                 
@@ -41,7 +42,8 @@ const AddUser = (props) => {
                 <input
                     type='number'
                     id='age'
-                    onChange={(event) => userAgeChangeHandler(event)}
+                    value={enteredUserAge}
+                    onChange={(event) => userAgeChangeHandler(event) }
                 />
                 
             <Button type='submit'>Add new user</Button>
