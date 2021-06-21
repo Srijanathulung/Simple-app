@@ -20,11 +20,19 @@ const AddUser = (props) => {
     }
     const addUserHandler = (event) => {
         event.preventDefault();
-        // console.log('addUserHandler is working')
+        if (enteredUserName.trim().length === 0 || enteredUserAge.trim().length=== 0) {
+            // console.log('Enter the username and id')
+            return; 
+        } 
+        //+enteredUserAge '+' works as a parseInt
+        if (+enteredUserAge > 1) {
+            return;
+        }
+        
+            console.log('enteredUserName=' + enteredUserName + ' enteredUserAge=' + enteredUserAge)
+            setEnteredUserName('');
+            setEnteredUserAge('');
         // console.log(enteredUserName, enteredUserAge)
-        console.log('enteredUserName=' + enteredUserName + ' enteredUserAge=' + enteredUserAge)
-        setEnteredUserName('');
-        setEnteredUserAge('');
       };
     return (
         <Card classNameProp={classes.input}> 
