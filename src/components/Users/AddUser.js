@@ -25,10 +25,10 @@ const AddUser = (props) => {
             return; 
         } 
         //+enteredUserAge '+' works as a parseInt
-        if (+enteredUserAge > 1) {
+        if (+enteredUserAge < 1) {
             return;
         }
-        
+        props.onAddUser(enteredUserName,enteredUserAge);
             console.log('enteredUserName=' + enteredUserName + ' enteredUserAge=' + enteredUserAge)
             setEnteredUserName('');
             setEnteredUserAge('');
