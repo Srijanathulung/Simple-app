@@ -49,16 +49,20 @@ const AddUser = (props) => {
         setError(null);
     }
     return (
-        //this elements are kept in array so each element required key.
-        [
-            error && ( 
-                <ErrorModal
-                    key='error-modal'
+        <div>
+           { error && ( 
+                < ErrorModal
+                //key shhould be added when elements are wrapped in array
+                    // key='error-modal'
                 title={error.title}
                 message={error.message}
                 errorConfirm={errorHandler}
-            />),
-        <Card  key='add-user-card' classNameProp={classes.input}> 
+                />
+            )}
+            <Card
+                // key='add-user-card'
+                classNameProp={classes.input}>
+                
         <form onSubmit={(event) => addUserHandler(event)}>
                 
             <label htmlFor='username'>Username</label>
@@ -83,7 +87,8 @@ const AddUser = (props) => {
 
         </form>
         </Card>
-        ]
+        </div>
+        
     )
  }
 export default AddUser;
