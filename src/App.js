@@ -14,10 +14,13 @@ function App() {
   }
 
   return (
-    <div className="App">
+    // <div className="App">
+    <React.Fragment>
+      {/* React.fragment is used to remove unnecessary div */}
       <AddUser onAddUser={onAddUserHandler }/>
       <UserList users={usersList}/>
-    </div>
+    </React.Fragment>
+    // </div>
   );
 }
 

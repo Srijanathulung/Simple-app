@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import classes from './AddUser.module.css';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModal';
+import Wrapper from '../Helpers/Wrapper';
 
 const AddUser = (props) => {
 
@@ -49,7 +50,7 @@ const AddUser = (props) => {
         setError(null);
     }
     return (
-        <div>
+        <Wrapper>
            { error && ( 
                 < ErrorModal
                 //key shhould be added when elements are wrapped in array
@@ -87,7 +88,7 @@ const AddUser = (props) => {
 
         </form>
         </Card>
-        </div>
+        </Wrapper>
         
     )
  }
