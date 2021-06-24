@@ -49,14 +49,16 @@ const AddUser = (props) => {
         setError(null);
     }
     return (
-        <div>
-            {error && ( 
+        //this elements are kept in array so each element required key.
+        [
+            error && ( 
                 <ErrorModal
+                    key='error-modal'
                 title={error.title}
                 message={error.message}
                 errorConfirm={errorHandler}
-            />)}
-        <Card classNameProp={classes.input}> 
+            />),
+        <Card  key='add-user-card' classNameProp={classes.input}> 
         <form onSubmit={(event) => addUserHandler(event)}>
                 
             <label htmlFor='username'>Username</label>
@@ -81,7 +83,7 @@ const AddUser = (props) => {
 
         </form>
         </Card>
-        </div>
+        ]
     )
  }
 export default AddUser;
